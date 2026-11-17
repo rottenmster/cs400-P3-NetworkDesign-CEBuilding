@@ -14,8 +14,7 @@ GNS3 model of the network for the new USP Civil Engineering Building, designed f
 
 Three-tier hierarchy (core, distribution, access) across four floors, with the MDF/server room on Level 4.
 
-![Uploading image.png…]()
-
+<img width="1260" height="908" alt="image" src="https://github.com/user-attachments/assets/cbefc881-2400-4f52-9fed-61c52a37656a" />
 
 | Device | Role |
 | --- | --- |
