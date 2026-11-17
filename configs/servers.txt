@@ -1,0 +1,67 @@
+===== CAMPUS-SRV =====
+Services on (includes Packet Tracer defaults): DNS_SERVER, NTP_SERVER, SYSLOG_SERVER, ACS_SERVER, FTP_SERVER, HTTP
+
+DNS records:
+  A-REC attendance.ce.usp.ac.fj -> 10.0.9.10
+  A-REC www.example.com -> 198.51.100.10
+
+AAA: RADIUS auth port 1645
+  Users: netadmin  (passwords in the .pkt, not copied here)
+  Clients (IP | description | type):
+    10.0.10.242 | ASW-LVL1-01 | RADIUS
+    10.0.10.243 | ASW-LVL1-02 | RADIUS
+    10.0.11.242 | ASW-LVL2-01 | RADIUS
+    10.0.11.243 | ASW-LVL2-02 | RADIUS
+    10.0.11.244 | ASW-LVL2-03 | RADIUS
+    10.0.12.242 | ASW-LVL3 | RADIUS
+    10.0.13.242 | ASW-LVL4 | RADIUS
+    172.31.0.2 | CORE-SW1 | RADIUS
+    172.31.0.6 | CORE-SW-2 | RADIUS
+
+===== DHCP-SRV =====
+Services on (includes Packet Tracer defaults): NTP_SERVER, SYSLOG_SERVER, FTP_SERVER, HTTP
+
+DHCP pools (name | network/mask | gateway | start-end | max | DNS | TFTP | WLC):
+  serverPool | 10.0.9.0/255.255.255.192 | gw 10.0.9.1 | 10.0.9.40-10.0.9.49 | max 10 | dns 172.16.10.10 | tftp 0.0.0.0 | wlc 0.0.0.0
+  L1-LAB | 10.0.10.0/255.255.255.192 | gw 10.0.10.1 | 10.0.10.11-10.0.10.60 | max 50 | dns 172.16.10.10 | tftp 0.0.0.0 | wlc 0.0.0.0
+  L1-STAFF | 10.0.10.64/255.255.255.192 | gw 10.0.10.65 | 10.0.10.75-10.0.10.124 | max 50 | dns 172.16.10.10 | tftp 0.0.0.0 | wlc 0.0.0.0
+  L1-VOIP | 10.0.10.128/255.255.255.224 | gw 10.0.10.129 | 10.0.10.134-10.0.10.158 | max 25 | dns 172.16.10.10 | tftp 10.0.9.30 | wlc 0.0.0.0
+  L1-AP | 10.0.10.208/255.255.255.240 | gw 10.0.10.209 | 10.0.10.212-10.0.10.221 | max 10 | dns 172.16.10.10 | tftp 0.0.0.0 | wlc 10.0.7.200
+  L1-PRN | 10.0.10.224/255.255.255.248 | gw 10.0.10.225 | 10.0.10.226-10.0.10.230 | max 5 | dns 172.16.10.10 | tftp 0.0.0.0 | wlc 0.0.0.0
+  L1-STU | 10.0.10.248/255.255.255.248 | gw 10.0.10.249 | 10.0.10.250-10.0.10.254 | max 5 | dns 172.16.10.10 | tftp 0.0.0.0 | wlc 0.0.0.0
+  L2-LAB | 10.0.11.0/255.255.255.192 | gw 10.0.11.1 | 10.0.11.11-10.0.11.60 | max 50 | dns 172.16.10.10 | tftp 0.0.0.0 | wlc 0.0.0.0
+  L2-STAFF | 10.0.11.64/255.255.255.192 | gw 10.0.11.65 | 10.0.11.75-10.0.11.124 | max 50 | dns 172.16.10.10 | tftp 0.0.0.0 | wlc 0.0.0.0
+  L2-VOIP | 10.0.11.128/255.255.255.224 | gw 10.0.11.129 | 10.0.11.134-10.0.11.158 | max 25 | dns 172.16.10.10 | tftp 10.0.9.30 | wlc 0.0.0.0
+  L2-AP | 10.0.11.208/255.255.255.240 | gw 10.0.11.209 | 10.0.11.212-10.0.11.221 | max 10 | dns 172.16.10.10 | tftp 0.0.0.0 | wlc 10.0.7.200
+  L2-PRN | 10.0.11.224/255.255.255.248 | gw 10.0.11.225 | 10.0.11.226-10.0.11.230 | max 5 | dns 172.16.10.10 | tftp 0.0.0.0 | wlc 0.0.0.0
+  L2-STU | 10.0.11.248/255.255.255.248 | gw 10.0.11.249 | 10.0.11.250-10.0.11.254 | max 5 | dns 172.16.10.10 | tftp 0.0.0.0 | wlc 0.0.0.0
+  L3-LAB | 10.0.12.0/255.255.255.192 | gw 10.0.12.1 | 10.0.12.11-10.0.12.60 | max 50 | dns 172.16.10.10 | tftp 0.0.0.0 | wlc 0.0.0.0
+  L3-STAFF | 10.0.12.64/255.255.255.192 | gw 10.0.12.65 | 10.0.12.75-10.0.12.124 | max 50 | dns 172.16.10.10 | tftp 0.0.0.0 | wlc 0.0.0.0
+  L3-VOIP | 10.0.12.128/255.255.255.224 | gw 10.0.12.129 | 10.0.12.134-10.0.12.158 | max 25 | dns 172.16.10.10 | tftp 10.0.9.30 | wlc 0.0.0.0
+  L3-AP | 10.0.12.208/255.255.255.240 | gw 10.0.12.209 | 10.0.12.212-10.0.12.221 | max 10 | dns 172.16.10.10 | tftp 0.0.0.0 | wlc 10.0.7.200
+  L3-PRN | 10.0.12.224/255.255.255.248 | gw 10.0.12.225 | 10.0.12.226-10.0.12.230 | max 5 | dns 172.16.10.10 | tftp 0.0.0.0 | wlc 0.0.0.0
+  L3-STU | 10.0.12.248/255.255.255.248 | gw 10.0.12.249 | 10.0.12.250-10.0.12.254 | max 5 | dns 172.16.10.10 | tftp 0.0.0.0 | wlc 0.0.0.0
+  L4-LAB | 10.0.13.0/255.255.255.192 | gw 10.0.13.1 | 10.0.13.11-10.0.13.60 | max 50 | dns 172.16.10.10 | tftp 0.0.0.0 | wlc 0.0.0.0
+  L4-STAFF | 10.0.13.64/255.255.255.192 | gw 10.0.13.65 | 10.0.13.75-10.0.13.124 | max 50 | dns 172.16.10.10 | tftp 0.0.0.0 | wlc 0.0.0.0
+  L4-VOIP | 10.0.13.128/255.255.255.224 | gw 10.0.13.129 | 10.0.13.134-10.0.13.158 | max 25 | dns 172.16.10.10 | tftp 10.0.9.30 | wlc 0.0.0.0
+  L4-AP | 10.0.13.208/255.255.255.240 | gw 10.0.13.209 | 10.0.13.212-10.0.13.221 | max 10 | dns 172.16.10.10 | tftp 0.0.0.0 | wlc 10.0.7.200
+  L4-PRN | 10.0.13.224/255.255.255.248 | gw 10.0.13.225 | 10.0.13.226-10.0.13.230 | max 5 | dns 172.16.10.10 | tftp 0.0.0.0 | wlc 0.0.0.0
+  L4-STU | 10.0.13.248/255.255.255.248 | gw 10.0.13.249 | 10.0.13.250-10.0.13.254 | max 5 | dns 172.16.10.10 | tftp 0.0.0.0 | wlc 0.0.0.0
+  WL-STUDENT | 10.0.0.0/255.255.252.0 | gw 10.0.0.1 | 10.0.0.11-10.0.3.242 | max 1000 | dns 172.16.10.10 | tftp 0.0.0.0 | wlc 0.0.0.0
+  WL-GUEST | 10.0.4.0/255.255.254.0 | gw 10.0.4.1 | 10.0.4.11-10.0.5.254 | max 500 | dns 172.16.10.10 | tftp 0.0.0.0 | wlc 0.0.0.0
+  WL-STAFF | 10.0.6.128/255.255.255.128 | gw 10.0.6.129 | 10.0.6.139-10.0.6.253 | max 115 | dns 172.16.10.10 | tftp 0.0.0.0 | wlc 0.0.0.0
+
+===== ATT SRV =====
+Services on (includes Packet Tracer defaults): NTP_SERVER, SYSLOG_SERVER, FTP_SERVER, HTTP
+
+===== ACS-SRV =====
+Services on (includes Packet Tracer defaults): NTP_SERVER, SYSLOG_SERVER, FTP_SERVER, HTTP
+
+===== FILE-SRV =====
+Services on (includes Packet Tracer defaults): NTP_SERVER, SYSLOG_SERVER, FTP_SERVER, HTTP
+
+===== NVR =====
+Services on (includes Packet Tracer defaults): NTP_SERVER, SYSLOG_SERVER, FTP_SERVER, HTTP
+
+===== INTERNET WEB =====
+Services on (includes Packet Tracer defaults): NTP_SERVER, SYSLOG_SERVER, FTP_SERVER, HTTP

@@ -1,0 +1,291 @@
+--- ASW-LVL1-01 startup-config
++++ ASW-LVL1-01 running-config
+@@ -86,2 +86,3 @@
+  switchport port-security violation restrict 
++ switchport port-security mac-address sticky 0001.6404.7401
+  spanning-tree portfast
+@@ -112,2 +113,3 @@
+  switchport port-security violation restrict 
++ switchport port-security mac-address sticky 0002.4AC3.4601
+  spanning-tree portfast
+@@ -130,2 +132,3 @@
+  switchport port-security violation restrict 
++ switchport port-security mac-address sticky 0000.0C05.2601
+  spanning-tree portfast
+@@ -279,2 +282,3 @@
+ !
++snmp-server community CEro-2026 RO
+ !
+@@ -282,3 +286,2 @@
+  permit 10.0.7.192 0.0.0.31
+-snmp-server community CEro-2026 RO
+ line con 0
+
+--- ASW-LVL2-01 startup-config
++++ ASW-LVL2-01 running-config
+@@ -86,2 +86,3 @@
+  switchport port-security violation restrict 
++ switchport port-security mac-address sticky 0090.21E0.7101
+  spanning-tree portfast
+@@ -120,2 +121,3 @@
+  switchport port-security violation restrict 
++ switchport port-security mac-address sticky 0001.631A.6101
+  spanning-tree portfast
+@@ -137,2 +139,3 @@
+  switchport port-security violation restrict 
++ switchport port-security mac-address sticky 00E0.F982.9001
+  spanning-tree portfast
+@@ -274,2 +277,3 @@
+ !
++snmp-server community CEro-2026 RO
+ !
+@@ -277,3 +281,2 @@
+  permit 10.0.7.192 0.0.0.31
+-snmp-server community CEro-2026 RO
+ line con 0
+
+--- ASW-LVL3 startup-config
++++ ASW-LVL3 running-config
+@@ -86,2 +86,3 @@
+  switchport port-security violation restrict 
++ switchport port-security mac-address sticky 0006.2A02.3001
+  spanning-tree portfast
+@@ -120,2 +121,3 @@
+  switchport port-security violation restrict 
++ switchport port-security mac-address sticky 00D0.BC92.3E01
+  spanning-tree portfast
+@@ -155,2 +157,3 @@
+  switchport port-security violation restrict 
++ switchport port-security mac-address sticky 0006.2AAE.CD01
+  spanning-tree portfast
+@@ -172,2 +175,3 @@
+  switchport port-security violation restrict 
++ switchport port-security mac-address sticky 000D.BDEB.6301
+  spanning-tree portfast
+@@ -206,2 +210,3 @@
+  switchport port-security violation restrict 
++ switchport port-security mac-address sticky 0001.C725.2101
+  spanning-tree portfast
+@@ -224,2 +229,3 @@
+  switchport port-security violation restrict 
++ switchport port-security mac-address sticky 0060.5CD9.2A01
+  spanning-tree portfast
+@@ -242,2 +248,3 @@
+  switchport port-security violation restrict 
++ switchport port-security mac-address sticky 0001.C7CB.D9D5
+  spanning-tree portfast
+@@ -252,2 +259,3 @@
+  switchport port-security violation restrict 
++ switchport port-security mac-address sticky 0004.9AD6.D78E
+  spanning-tree portfast
+@@ -314,2 +322,3 @@
+ !
++snmp-server community CEro-2026 RO
+ !
+@@ -317,3 +326,2 @@
+  permit 10.0.7.192 0.0.0.31
+-snmp-server community CEro-2026 RO
+ line con 0
+
+--- ASW-LVL4 startup-config
++++ ASW-LVL4 running-config
+@@ -86,2 +86,3 @@
+  switchport port-security violation restrict 
++ switchport port-security mac-address sticky 000C.8550.3101
+  spanning-tree portfast
+@@ -120,2 +121,3 @@
+  switchport port-security violation restrict 
++ switchport port-security mac-address sticky 0060.5CAA.6A01
+  spanning-tree portfast
+@@ -138,2 +140,3 @@
+  switchport port-security violation restrict 
++ switchport port-security mac-address sticky 000A.F3BA.3B01
+  spanning-tree portfast
+@@ -164,2 +167,3 @@
+  switchport port-security violation restrict 
++ switchport port-security mac-address sticky 0090.2B51.E801
+  spanning-tree portfast
+@@ -182,2 +186,3 @@
+  switchport port-security violation restrict 
++ switchport port-security mac-address sticky 0001.C9B9.1C01
+  spanning-tree portfast
+@@ -208,2 +213,3 @@
+  switchport port-security violation restrict 
++ switchport port-security mac-address sticky 0001.9641.C401
+  spanning-tree portfast
+@@ -237,2 +243,3 @@
+  switchport port-security violation restrict 
++ switchport port-security mac-address sticky 0000.0CA5.0D87
+  spanning-tree portfast
+@@ -257,2 +264,3 @@
+  switchport port-security violation restrict 
++ switchport port-security mac-address sticky 0002.17DA.2D7A
+  spanning-tree portfast
+@@ -267,2 +275,3 @@
+  switchport port-security violation restrict 
++ switchport port-security mac-address sticky 0060.5C95.1801
+  spanning-tree portfast
+@@ -277,2 +286,3 @@
+  switchport port-security violation restrict 
++ switchport port-security mac-address sticky 0007.ECAC.9B91
+  spanning-tree portfast
+@@ -323,2 +333,3 @@
+ !
++snmp-server community CEro-2026 RO
+ !
+@@ -326,3 +337,2 @@
+  permit 10.0.7.192 0.0.0.31
+-snmp-server community CEro-2026 RO
+ line con 0
+
+--- SRV-SW startup-config
++++ SRV-SW running-config
+@@ -75,2 +75,3 @@
+  switchport port-security violation restrict 
++ switchport port-security mac-address sticky 0005.5E24.1AD5
+  spanning-tree portfast
+@@ -95,2 +96,3 @@
+  switchport port-security violation restrict 
++ switchport port-security mac-address sticky 0001.427E.A917
+  spanning-tree portfast
+@@ -258,2 +260,3 @@
+ !
++snmp-server community CEro-2026 RO
+ !
+@@ -261,3 +264,2 @@
+  permit 10.0.7.192 0.0.0.31
+-snmp-server community CEro-2026 RO
+ line con 0
+
+--- EDGE-FW startup-config
++++ EDGE-FW running-config
+@@ -98,2 +98,7 @@
+ !
++ip access-list extended sl_def_acl
++ deny tcp any any eq telnet
++ deny tcp any any eq www
++ deny tcp any any eq 22
++ permit tcp any any eq 22
+ ip access-list standard MGMT-ONLY
+@@ -103,7 +108,2 @@
+  permit 172.16.10.0 0.0.0.255
+-ip access-list extended sl_def_acl
+- deny tcp any any eq telnet
+- deny tcp any any eq www
+- deny tcp any any eq 22
+- permit tcp any any eq 22
+ ip access-list extended ANTI-SPOOF-IN
+
+--- CME-RTR startup-config
++++ CME-RTR running-config
+@@ -52,2 +52,4 @@
+ !
++!
++vtp mode transparent
+ !
+@@ -121,2 +123,32 @@
+ !
++ephone 1
++ device-security-mode none
++ mac-address 0001.64CD.60B9
++ type 7960
++ button 1:1
++!
++ephone 2
++ device-security-mode none
++ mac-address 0005.5E9B.C38A
++ type 7960
++ button 1:2
++!
++ephone 3
++ device-security-mode none
++ mac-address 0006.2A1E.C0E3
++ type 7960
++ button 1:3
++!
++ephone 4
++ device-security-mode none
++ mac-address 00D0.FFC6.2048
++ type 7960
++ button 1:4
++!
++ephone 5
++ device-security-mode none
++ mac-address 0001.645A.63A6
++ type 7960
++ button 1:5
++!
+ line con 0
+
+--- ASW-LVL1-02 startup-config
++++ ASW-LVL1-02 running-config
+@@ -96,2 +96,3 @@
+  switchport port-security violation restrict 
++ switchport port-security mac-address sticky 000C.CF51.3A01
+  spanning-tree portfast
+@@ -114,2 +115,3 @@
+  switchport port-security violation restrict 
++ switchport port-security mac-address sticky 00E0.B0B2.2501
+  spanning-tree portfast
+@@ -132,2 +134,3 @@
+  switchport port-security violation restrict 
++ switchport port-security mac-address sticky 0006.2A61.3C88
+  spanning-tree portfast
+@@ -142,2 +145,3 @@
+  switchport port-security violation restrict 
++ switchport port-security mac-address sticky 0001.42D8.8601
+  spanning-tree portfast
+@@ -152,2 +156,3 @@
+  switchport port-security violation restrict 
++ switchport port-security mac-address sticky 000B.BEC1.2A5E
+  spanning-tree portfast
+@@ -286,2 +291,3 @@
+ !
++snmp-server community CEro-2026 RO
+ !
+@@ -289,3 +295,2 @@
+  permit 10.0.7.192 0.0.0.31
+-snmp-server community CEro-2026 RO
+ line con 0
+
+--- ASW-LVL2-02 startup-config
++++ ASW-LVL2-02 running-config
+@@ -86,2 +86,3 @@
+  switchport port-security violation restrict 
++ switchport port-security mac-address sticky 0001.C926.6901
+  spanning-tree portfast
+@@ -120,2 +121,3 @@
+  switchport port-security violation restrict 
++ switchport port-security mac-address sticky 00D0.BA4D.7701
+  spanning-tree portfast
+@@ -270,2 +272,3 @@
+ !
++snmp-server community CEro-2026 RO
+ !
+@@ -273,3 +276,2 @@
+  permit 10.0.7.192 0.0.0.31
+-snmp-server community CEro-2026 RO
+ line con 0
+
+--- ASW-LVL2-03 startup-config
++++ ASW-LVL2-03 running-config
+@@ -86,2 +86,3 @@
+  switchport port-security violation restrict 
++ switchport port-security mac-address sticky 0003.E41B.BD01
+  spanning-tree portfast
+@@ -115,2 +116,3 @@
+  switchport port-security violation restrict 
++ switchport port-security mac-address sticky 0090.0CB3.C7C8
+  spanning-tree portfast
+@@ -125,2 +127,3 @@
+  switchport port-security violation restrict 
++ switchport port-security mac-address sticky 00E0.8FD2.9A41
+  spanning-tree portfast
+@@ -277,2 +280,3 @@
+ !
++snmp-server community CEro-2026 RO
+ !
+@@ -280,3 +284,2 @@
+  permit 10.0.7.192 0.0.0.31
+-snmp-server community CEro-2026 RO
+ line con 0

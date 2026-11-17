@@ -1,0 +1,14 @@
+===== WLC-1 (WLC) =====
+Management: 10.0.7.200/255.255.255.224 gw 10.0.7.193
+
+Interfaces (name | VLAN | IP/mask | gateway | DHCP server):
+  management | 0 | 10.0.7.200/255.255.255.224 | 10.0.7.193 | 0.0.0.0
+  virtual | 0 | 192.0.2.1/255.255.255.255 |  | 0.0.0.0
+  student | 11 | 10.0.0.4/255.255.252.0 | 10.0.0.1 | 10.0.9.15
+  guest | 21 | 10.0.4.4/255.255.254.0 | 10.0.4.1 | 10.0.9.15
+  staff | 41 | 10.0.6.132/255.255.255.128 | 10.0.6.129 | 10.0.9.15
+
+WLANs (SSID | VLAN | interface | enabled | auth type | encrypt type | RADIUS server):
+  CE-STAFF | 41 | staff | true | 4 | 4 | (none)
+  CE-STUDENT | 11 | student | true | 4 | 4 | (none)
+  CE-GUEST | 21 | guest | true | 4 | 4 | (none)

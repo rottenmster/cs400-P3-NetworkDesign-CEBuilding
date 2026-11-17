@@ -76,4 +76,27 @@ Multi-factor authentication on the jump host and alert rules on the syslog serve
 
 ## Repository layout
 
-Running configurations are exported after each change and committed here.
+```
+packet-tracer/
+  CE-Building_PacketTracer_Solution.pkt   Packet Tracer model of the building
+gns3/
+  3-tier-network-practice.gns3            GNS3 project file
+configs/                                  Exported from the Packet Tracer model (PT 8.2.2)
+  SUMMARY.txt                             Device list, models, and which devices have unsaved changes
+  running-config/<DEVICE>.txt             What each device is running now (use these)
+  startup-config/<DEVICE>.txt             What is saved to NVRAM (loads after a reload)
+  unsaved-changes.diff                    Lines that differ between running and startup configs
+  ALL-running-configs.txt                 Every running config in one file
+  end-devices.csv                         End devices: model, addressing (DHCP/static) and MAC
+  servers.txt                             Server services and DNS records (CAMPUS-SRV etc.)
+  wlc.txt                                 Wireless LAN controller settings
+```
+
+Device names in `configs/` follow the Packet Tracer model (for example `CORE-SW-1`), which can differ slightly from the GNS3 names above.
+
+### Opening the files
+- **Packet Tracer:** open the `.pkt` in Cisco Packet Tracer 8.2 or later.
+- **GNS3:** open the `.gns3` file in GNS3 2.2. The Cisco IOSv / IOSvL2 images are licensed and are **not** included; import your own copies first.
+
+### Updating
+Running configurations are exported after each change and committed to `configs/` as plain text (not zipped), so changes can be reviewed line by line in GitHub.

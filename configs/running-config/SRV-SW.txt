@@ -1,0 +1,280 @@
+!
+version 15.0
+service timestamps log datetime msec
+no service timestamps debug datetime msec
+service password-encryption
+!
+hostname SRV-SW
+!
+enable secret 5 $1$mERr$rerI40dfRClLn7AQJOWAe.
+!
+!
+!
+!
+!
+aaa new-model
+!
+aaa authentication login CONSOLE local 
+aaa authentication login default group radius local 
+!
+!
+!
+!
+ip ssh version 2
+ip ssh time-out 60
+no ip domain-lookup
+ip domain-name ce.usp.ac.fj
+!
+username netadmin secret 5 $1$mERr$H5x087bKOyxhQnZKl6E/1.
+!
+vtp mode transparent
+!
+!
+!
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+!
+vlan 11
+ name WL-STUDENT
+!
+vlan 21
+ name WL-GUEST
+!
+vlan 41
+ name WL-STAFF
+!
+vlan 90
+ name SERVERS
+!
+vlan 100
+ name NET-MGMT
+!
+vlan 666
+ name BLACKHOLE
+!
+vlan 998
+ name NATIVE-UNUSED
+!
+interface FastEthernet0/1
+ description DHCP-SRV
+ switchport access vlan 90
+ switchport mode access
+ switchport port-security
+ switchport port-security mac-address sticky 
+ switchport port-security violation restrict 
+ switchport port-security mac-address sticky 0000.0C7B.7824
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet0/2
+ description ATT SRV
+ switchport access vlan 90
+ switchport mode access
+ switchport port-security
+ switchport port-security mac-address sticky 
+ switchport port-security violation restrict 
+ switchport port-security mac-address sticky 0005.5E24.1AD5
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet0/3
+ description FILE-SRV
+ switchport access vlan 90
+ switchport mode access
+ switchport port-security
+ switchport port-security mac-address sticky 
+ switchport port-security violation restrict 
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet0/4
+ description NVR
+ switchport access vlan 90
+ switchport mode access
+ switchport port-security
+ switchport port-security mac-address sticky 
+ switchport port-security violation restrict 
+ switchport port-security mac-address sticky 0001.427E.A917
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet0/5
+ description CME-RTR
+ switchport access vlan 90
+ switchport mode access
+ switchport port-security
+ switchport port-security mac-address sticky 
+ switchport port-security violation restrict 
+ switchport port-security mac-address sticky 0006.2AA7.4C01
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet0/6
+ description ACS-SRV
+ switchport access vlan 90
+ switchport mode access
+ switchport port-security
+ switchport port-security mac-address sticky 
+ switchport port-security violation restrict 
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet0/7
+ description UNUSED
+ switchport access vlan 666
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/8
+ description UNUSED
+ switchport access vlan 666
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/9
+ description UNUSED
+ switchport access vlan 666
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/10
+ description JUMP-HOST
+ switchport access vlan 100
+ switchport mode access
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet0/11
+ description UNUSED
+ switchport access vlan 666
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/12
+ description UNUSED
+ switchport access vlan 666
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/13
+ description UNUSED
+ switchport access vlan 666
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/14
+ description UNUSED
+ switchport access vlan 666
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/15
+ description UNUSED
+ switchport access vlan 666
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/16
+ description UNUSED
+ switchport access vlan 666
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/17
+ description UNUSED
+ switchport access vlan 666
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/18
+ description UNUSED
+ switchport access vlan 666
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/19
+ description UNUSED
+ switchport access vlan 666
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/20
+ description WLC-1 (mgmt untagged VLAN 100)
+ switchport trunk native vlan 100
+ switchport trunk allowed vlan 11,21,41,100
+ switchport mode trunk
+ switchport nonegotiate
+!
+interface FastEthernet0/21
+ description UNUSED
+ switchport access vlan 666
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/22
+ description UNUSED
+ switchport access vlan 666
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/23
+ description UNUSED
+ switchport access vlan 666
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/24
+ description UNUSED
+ switchport access vlan 666
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet0/1
+ description TO CORE-SW1 Gi1/0/10
+ switchport trunk native vlan 998
+ switchport trunk allowed vlan 11,21,41,90,100
+ switchport mode trunk
+ switchport nonegotiate
+!
+interface GigabitEthernet0/2
+ description TO CORE-SW2 Gi1/0/10
+ switchport trunk native vlan 998
+ switchport trunk allowed vlan 11,21,41,90,100
+ switchport mode trunk
+ switchport nonegotiate
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan100
+ description NET-MGMT
+ ip address 10.0.7.217 255.255.255.224
+!
+ip default-gateway 10.0.7.193
+!
+banner motd #AUTHORISED ACCESS ONLY - USP Civil Engineering Building. Activity is logged.#
+logging 172.16.10.10
+radius-server host 172.16.10.10 auth-port 1645 key CEradius@2026
+!
+!
+snmp-server community CEro-2026 RO
+!
+ip access-list standard MGMT-ONLY
+ permit 10.0.7.192 0.0.0.31
+line con 0
+ logging synchronous
+ login
+!
+line vty 0 4
+ access-class MGMT-ONLY in
+ transport input ssh
+line vty 5 15
+ access-class MGMT-ONLY in
+ transport input ssh
+!
+!
+!
+ntp server 172.16.10.10
+!
+end

@@ -1,0 +1,26 @@
+Configs exported from DEMO_VERSION_COMPLETE_v3.pkt (Packet Tracer 8.2.2)
+
+Device           Model       Lines  Startup-config      Status
+ASW-LVL1-01      2960-24TT     302  yes                 UNSAVED CHANGES
+ASW-LVL1-02      2960-24TT     311  yes                 UNSAVED CHANGES
+ASW-LVL2-01      2960-24TT     297  yes                 UNSAVED CHANGES
+ASW-LVL2-02      2960-24TT     292  yes                 UNSAVED CHANGES
+ASW-LVL2-03      2960-24TT     300  yes                 UNSAVED CHANGES
+ASW-LVL3         2960-24TT     342  yes                 UNSAVED CHANGES
+ASW-LVL4         2960-24TT     353  yes                 UNSAVED CHANGES
+CAMPUS-R1        2911          127  yes                 saved
+CAMPUS-SW        2960-24TT     114  yes                 saved
+CME-RTR          2811          167  yes                 UNSAVED CHANGES
+CORE-SW-1        3650-24PS     452  yes                 saved
+CORE-SW-2        3650-24PS     453  yes                 saved
+DSW-LVL1         3650-24PS     514  yes                 saved
+DSW-LVL2         3650-24PS     526  yes                 saved
+DSW-LVL3         3560-24PS     486  yes                 saved
+DSW-LVL4         3560-24PS     486  yes                 saved
+EDGE-FW          2911          140  yes                 UNSAVED CHANGES
+ISP-RTR          2911           84  yes                 saved
+SRV-SW           2960-24TT     280  yes                 UNSAVED CHANGES
+
+running-config/  = what each device is running now (use these)
+startup-config/  = what is saved to NVRAM (what loads after a reload)
+unsaved-changes.diff = lines that differ; run "write memory" on those devices to keep them
