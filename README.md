@@ -14,6 +14,9 @@ GNS3 model of the network for the new USP Civil Engineering Building, designed f
 
 Three-tier hierarchy (core, distribution, access) across four floors, with the MDF/server room on Level 4.
 
+![Uploading image.png…]()
+
+
 | Device | Role |
 | --- | --- |
 | EDGE-FW | Internet edge firewall (PERIMETER-IN ACL) |
