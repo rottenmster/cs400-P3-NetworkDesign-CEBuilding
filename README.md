@@ -52,7 +52,7 @@ Three-tier hierarchy (core, distribution, access) across four floors, with the M
 | 998 | NATIVE-UNUSED | – | Native VLAN on all trunks |
 
 DHCP is relayed from each SVI to DHCP-SRV (`ip helper-address 10.0.9.15`). The building range (10.0.0.0–10.0.9.79) sits inside 10.0.0.0/20.
-There are 12 VLAN devices and users and 3 VLAN [666, 900, 998] are for security standards.
+There are 12 VLAN for devices and users and 3 VLAN [666, 900, 998] are for security standards.
 
 ## Security configuration
 
